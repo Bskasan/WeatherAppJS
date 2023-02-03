@@ -22,6 +22,32 @@ form.addEventListener("submit", (event) => {
   event.currentTarget.reset();
 });
 
-const getWeatherDataFromAPI = () => {
-    
+const getWeatherDataFromAPI = async () => {
+  //? Postman practised
+  //? Creating Collection
+  //? Creating request (GET)
+
+  const apiKey = DecryptStringAES(localStorage.getItem("apiKey"));
+  console.log(apiKey);
+  const cityName = input.value;
+  const units = "metric";
+  const lang = "en";
+
+  //* http request url(endpoint)
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=${units}&lang=${lang}`;
+
+  try {
+    const response = await fetch(url).then((response) => response.json());
+
+    console.log(response);
+
+    //! --- obj-destructuring ---
+    const { main, name, sys, weather } = response;
+
+    const iconUrl = `http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`;
+
+    const iconUrlAWS = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${weather[0].icon}.svg`;
+  } catch (error) {
+    msgSpan.innerText = "City Not Found";
+  }
 };
