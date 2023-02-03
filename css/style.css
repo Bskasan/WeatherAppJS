@@ -26,9 +26,9 @@ button {
   cursor: pointer;
 }
 
-input {
+/* input {
   -webkit-appearance: none;
-}
+} */
 
 button,
 input {
@@ -56,6 +56,7 @@ body {
   height: 100vh;
   color: var(--text_dark);
   padding: 70px;
+  
 }
 
 .container {
