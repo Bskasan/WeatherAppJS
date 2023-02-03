@@ -5,7 +5,7 @@
   --text_light: #fff;
   --text_med: #53627c;
   --text_dark: #1e2432;
-  --red: #ff1e42;
+  --red: #eb6b80;
   --darkred: #c3112d;
   --orange: #ff8c00;
 }
@@ -36,6 +36,7 @@ input {
   background: none;
   outline: none;
   color: inherit;
+  font-family: 'Itim', cursive;
 }
 
 img {
@@ -49,7 +50,7 @@ ul {
 }
 
 body {
-  font: 1rem/1.3 "Roboto", sans-serif;
+    font-family: 'Itim', cursive;
   background-image: url(../img/backgroundImg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -57,6 +58,16 @@ body {
   color: var(--text_dark);
   padding: 70px;
   
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-family: 'Itim', cursive;
 }
 
 .container {
